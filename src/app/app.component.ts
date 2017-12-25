@@ -12,29 +12,40 @@ const SOCKET_NAMESPACE = 'mixidea';
 })
 export class AppComponent {
   title = 'app';
-  socket_io: any;
+  mixidea_io: any;
+  socket: any;
 
   constructor() {
 
-    this.socket_io = io.connect(SOCKET_URL + SOCKET_NAMESPACE, (socket) => {
-      socket.join('room-a');
+    this.socket = io.connect(SOCKET_URL + SOCKET_NAMESPACE, (socket) => {
+
+
+    });
+
+    console.log('connected');
+    this.socket.on('message', (data) => {
+      console.log(data);
     });
 
   }
 
-  send_data(){
 
+  join_room_a() {
+    this.socket.emit('join-room', 'room_a');
+  }
+
+  join_room_b() {
+    this.socket.emit('join-room', 'room_b');
 
   }
 
+  join_room_c() {
+    this.socket.emit('join-room', 'room_c');
+
+  }
 
   finalize() {
-    this.socket_io.close();
-
+    this.mixidea_io.close();
   }
-
-
-
-
 
 }
