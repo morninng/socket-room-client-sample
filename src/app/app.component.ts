@@ -31,30 +31,41 @@ export class AppComponent {
 
 
   join_room_a() {
-    this.socket.emit('join-room', 'room_a');
+    this.socket.emit('join-room', 'aaa');
   }
 
   join_room_b() {
-    this.socket.emit('join-room', 'room_b');
+    this.socket.emit('join-room', 'bbb');
 
   }
 
   join_room_c() {
-    this.socket.emit('join-room', 'room_c');
+    this.socket.emit('join-room', 'ccc');
 
   }
 
+  join_room_d() {
+    this.socket.emit('join-room', 'ddd');
+
+  }
+
+
   leave_room_a() {
-    this.socket.emit('leave-room', 'room_a');
+    this.socket.emit('leave-room', 'aaa');
   }
 
   leave_room_b() {
-    this.socket.emit('leave-room', 'room_b');
+    this.socket.emit('leave-room', 'bbb');
   }
 
   leave_room_c() {
-    this.socket.emit('leave-room', 'room_c');
+    this.socket.emit('leave-room', 'ccc');
   }
+
+  leave_room_d() {
+    this.socket.emit('leave-room', 'ddd');
+  }
+
 
   leave_room_all() {
     this.socket.emit('leave-all', 'dummy');
