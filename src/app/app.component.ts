@@ -44,6 +44,22 @@ export class AppComponent {
 
   }
 
+  leave_room_a() {
+    this.socket.emit('leave-room', 'room_a');
+  }
+
+  leave_room_b() {
+    this.socket.emit('leave-room', 'room_b');
+  }
+
+  leave_room_c() {
+    this.socket.emit('leave-room', 'room_c');
+  }
+
+  leave_room_all() {
+    this.socket.emit('leave-all', 'dummy');
+  }
+
   finalize() {
     this.mixidea_io.close();
   }
